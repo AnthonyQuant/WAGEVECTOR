@@ -1,0 +1,18 @@
+# Python bytecode & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.env
+
+# Jupyter / Colab checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# OS metadata & thumbnail caches
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini

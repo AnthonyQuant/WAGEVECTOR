@@ -1,0 +1,7 @@
+model_id,model_name,specification,n_predictors,evaluation_scale,scale_comparability_group,train_r2,train_mae,train_rmse,train_mean_resid,test_r2,test_mae,test_rmse,test_medae,test_mean_resid
+Model 0,Mean-Only Baseline,wage_hat = mean(y_wage_train),0,Recorded wage units (raw),Group A: Raw Recorded Wage Scale,0.0,29.7333,42.2603,0.0,-0.0006,29.1025,39.4959,23.9132,-0.9533
+Model 1,Simple Age-Only OLS,wage ~ age,1,Recorded wage units (raw),Group A: Raw Recorded Wage Scale,0.0407,28.8223,41.3924,0.0,0.0262,28.7688,38.963,23.0419,-1.3757
+Model 2,Multivariable Raw-Wage OLS,wage ~ X_all (13 predictors),13,Recorded wage units (raw),Group A: Raw Recorded Wage Scale,0.3279,23.2505,34.6459,0.0,0.3812,22.0875,31.0608,16.9936,0.1312
+Model 3 (Native),Multivariable Log-Wage OLS (Native Scale),logwage ~ X_all (13 predictors),13,Natural-log ln(wage) units,Group B: Natural-Log Scale (Do NOT compare R2/RMSE directly to Group A),0.3636,0.205,0.2844,0.0,0.4172,0.1935,0.2531,0.1573,0.0077
+Model 3A (Naive Exp),Log-Wage OLS Retransformed via Naive exp(z_hat),exp(logwage_hat) [uncorrected Jensen bias],13,"Recorded wage units (raw, retransformed)",Group A: Raw Recorded Wage Scale,0.3179,22.8769,34.9015,4.452906,0.3743,21.5888,31.2333,15.9522,4.4948
+Model 3B (Duan Smeared),Log-Wage OLS Retransformed via Duan Smearing,1.040696 * exp(logwage_hat) [train smearing],13,"Recorded wage units (raw, retransformed)",Group A: Raw Recorded Wage Scale,0.3301,23.1179,34.5887,0.080517,0.3891,21.8396,30.8598,17.064,0.1629
